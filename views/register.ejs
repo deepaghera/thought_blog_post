@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%- include('layout/header');-%>
+
+<body>
+
+  <%- include('layout/navbar');-%>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('/img/bg.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1 style="color: black;">Register a new account</h1>            
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">        
+        <form action="/users/register" method="POST" enctype="multipart/form-data" >
+   <!--  enctype="multipart/form-data"    -->      
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>User Name</label>
+              <input type="text" class="form-control" placeholder="Name" id="name" name="username">              
+            </div>
+          </div>
+          <div class="control-group">
+            <div class="form-group floating-label-form-group controls">
+              <label>Password</label>
+              <input  class="form-control" id="password" placeholder="Password" name="password"></input>
+              <p class="help-block text-danger"></p>
+            </div>
+          </div>
+          <div class="control-group">
+            <button type="submit" class="btn btn-primary">Register</button>
+          </div>          
+          <br>
+          <div id="success"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <%- include('layout/footer');-%>
+
+  <%- include('layout/script');-%>
+
+</body>
+
+</html>

@@ -7,7 +7,8 @@ const homeController      = require('./controllers/home');
 const newPostController   = require('./controllers/newPost');
 const storePostController = require('./controllers/storePost');
 const getPostController   = require('./controllers/getPost');
-//   middleWare 
+const newRegisterController  = require('./controllers/register');
+//                         <<middleWare >> 
 const validateMiddleWare = require('./middleware/validationMiddleware')
 const app = express();
 app.use(express.json());
@@ -31,6 +32,7 @@ app.post('/posts/store',storePostController);
 
 app.get("/post/:id",getPostController);
 
+app.get('/auth/register',newRegisterController);
 console.log(__dirname);
 app.listen(4000,() => {
     console.log("app is running on 4000");
