@@ -9,8 +9,8 @@ const storePostController   = require('./controllers/storePost');
 const getPostController     = require('./controllers/getPost');
 const newRegisterController = require('./controllers/register');
 const storeUserController   = require('./controllers/storeUser');
-const loginUserController   = require('./controllers/login');
-const checkLoginController  = require('./controllers/checkLogin');
+const loginController   = require('./controllers/login');
+const loginUserController  = require('./controllers/loginUser');
 //                         <<middleWare >> 
 const validateMiddleWare = require('./middleware/validationMiddleware')
 const app = express();
@@ -39,9 +39,9 @@ app.get('/auth/register',newRegisterController);
 
 app.post('/users/register',storeUserController);
 
-app.get('/auth/login',loginUserController);
+app.get('/auth/login',loginController);
 
-app.post('/users/login',checkLoginController);
+app.post('/users/login',loginUserController);
 
 console.log(__dirname);
 app.listen(4000,() => {
