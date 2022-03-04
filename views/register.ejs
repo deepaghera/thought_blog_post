@@ -28,6 +28,12 @@
         <form action="/users/register" method="POST" enctype="multipart/form-data" >
    <!--  enctype="multipart/form-data"    -->      
           <div class="control-group">
+            <% if(errors != null && errors.length > 0){ %> 
+              <ul class="list-group"></ul>
+              <% for (var i = 0; i < errors.length; i++) { %>
+              <li class="list-group-item list-group-item-danger"><%= errors[i] %></li>
+              <% } %> </ul>
+            <% } %>
             <div class="form-group floating-label-form-group controls">
               <label>User Name</label>
               <input type="text" class="form-control" placeholder="Name" id="name" name="username">              
