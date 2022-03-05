@@ -6,8 +6,10 @@ module.exports = async (req,res) => {
         if(error) {
            // console.log("errors is here ===>",error.errors);
             const validationErrors = Object.keys(error.errors).map(key => error.errors[key].message);
-            req.session.validationErrors = validationErrors
-            console.log(error);
+            //req.flash('validationErrors',validationErrors);   
+            console.log(validationErrors);  
+            req.flash('validationErrors', validationErrors);
+            req.flash('data',req.body)
             return res.redirect('/auth/register');
         }
             res.redirect('/');

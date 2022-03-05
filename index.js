@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload');
 const expressSession = require('express-session');
+const flash = require('connect-flash');
 const ejs = require('ejs');
 //                      << controllers >>
 const homeController        = require('./controllers/home');
@@ -18,6 +19,7 @@ const validateMiddleWare = require('./middleware/validationMiddleware');
 const authMiddleWare = require('./middleware/authMiddleWare');
 const redirectIfAuthenticatedMiddleWare = require('./middleware/ redirectIfAuthenticatedMiddleware');
 const app = express();
+app.use(flash());
 app.use(express.json());
 app.use(express.urlencoded({extended : true }))
 app.use(expressSession({
