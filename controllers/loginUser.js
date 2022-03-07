@@ -1,5 +1,4 @@
 const bcrypt = require('bcrypt');
-//const res = require('express/lib/response');
 const User = require('../model/User');
 
 module.exports = (req, res) => {
@@ -10,7 +9,6 @@ module.exports = (req, res) => {
                 if (same) { // if passwords match
                     // store user session, will talk about it later
                     req.session.userId  = user._id;
-                    console.log("login varified");
                     res.redirect('/')
                 }
                 else {
